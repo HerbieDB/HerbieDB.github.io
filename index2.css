@@ -9,13 +9,13 @@
 
 /* Set the background color for my page: */
 body{
-    background-color: rgb(233, 233, 233);
+    background-color: #303F67;
  
 }
 
 
 /* Choose the appearance of the tags, h1, h3 and p: */
-h1 {
+h1, h2 {
     color:rgb(239,230,230);
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -36,18 +36,41 @@ h3, p{
     border-width: 3px;
     border-style: solid;
     border-radius: 15px;
-    border-color: pink;
+    border-color: #303F67;
 }
 
 
-/* Set the apperance of the class, chart */
-.chart{
+.myWeek2{
     margin: auto;
+    max-width: 600px;
+    background-color: #303F67;
+
+      
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: rgb(32,42,68);
+}
+
+.myWeek2 h1,
+.myWeek2 h2 {
+    color: black
+}
+
+.myWeek2 h3,
+.myWeek2 p {
+    color: #E6BBAD
+}
+
+
+/* Set the appearance of the class, chart */
+.chart{
+    margin: 20px;
     background-color: rgb(32,42,68);
     color:#00a767;
     
-    width:400px;
-    border-width: 4px;
+    width:350px;
+    border-width: 1px;
     border-style: solid;
     border-radius: 10px;
     border-color: red;

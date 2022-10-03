@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Title for the page -->
-    <title>Document</title>
+    <title>Herbie Data Science</title>
 
     <!-- Link to my style sheet -->
     <link rel="stylesheet" href="index2.css">
@@ -27,6 +27,8 @@
     <div class="myWeek1">
         <h1>Data Science for Economists.</h1>
         
+        <h2>Week 1:</h2>
+
         <h3>Ethereum</h3>
         <p>The first chart tracks Ethereum price in USD between 2016 and 2022.</p>
         <div class="chart" id="Chart1"></div>
@@ -35,6 +37,15 @@
         <p>My second chart looks at CPI inflation in the UK between 1988 and 2022.</p>
         <div class="chart" id="Chart2"> </div>
     </div> 
+
+    <div class="myWeek1">
+        <h2>Week 2:</h2>
+
+        <h3>IMF Lending</h3>
+        <div class="chart" id="Chart3"></div>
+
+
+    </div>
 </body>
 
 
@@ -42,10 +53,12 @@
     //Define charts:
     var myChart1 = "ETH-USD.json";
     var myChart2 = "UKinflation.json";
+    var myChart3 = "imflending.json";
 
     // Embed charts:
     vegaEmbed('#Chart1', myChart1);
     vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
 </script>
 
 </html>
