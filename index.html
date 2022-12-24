@@ -54,17 +54,17 @@
         <div style="display:flex; justify-content: space-evenly;"> <!--Larger container around the charts so that I can adjust the positioning of them, 
             while keeping the titles and descriptions above the charts. Need to figure out how to center align my chart divs-->
 
-            <span>
+            <div>
                 <h3>Ethereum</h3>
                 <p>The first chart tracks Ethereum price in USD between 2016 and 2022.</p>
                 <div class="chart" id="Chart1"></div>
-            </span>
+            </div>
 
-            <span>
+            <div>
                 <h3>Inflation</h3>
                 <p>My second chart looks at CPI inflation in the UK between 1988 and 2022.</p>
                 <div class="chart" id="Chart2"> </div>            
-            </span>
+            </div>
 
         </div>
         
@@ -75,15 +75,16 @@
 
         <div style="display:flex; justify-content: space-evenly;"> <!--Larger container around the charts so that I can adjust the positioning of them, 
             while keeping the titles and descriptions above the charts-->
-            <span>
+            <div>
                 <h3>IMF Lending</h3>
                 <div class="chart" id="Chart3"></div>
-            </span>
-        </div>
+            </div>
 
-        
-
-
+            <div>
+                <h3>IMF Lending as Percentage of World GDP</h3>
+                <div class="chart" id="Chart4"></div>
+            </div>
+        </div>     
     </div>
 </body>
 
@@ -93,11 +94,12 @@
     var myChart1 = "ETH-USD.json";
     var myChart2 = "UKinflation.json";
     var myChart3 = "imflending.json";
-
+    var myChart4 = "imflendingGDP.json";
     // Embed charts:
     vegaEmbed('#Chart1', myChart1);
     vegaEmbed('#Chart2', myChart2);
     vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
 </script>
 
 </html>

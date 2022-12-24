@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "values": [{"LOCATION": "JPN", "TIME": 1997, "Value": 38900.1112}, {"LOCATION": "JPN", "TIME": 1998, "Value": 38736.53919}, {"LOCATION": "JPN", "TIME": 1999, "Value": 38606.65612}, {"LOCATION": "JPN", "TIME": 2000, "Value": 38823.46369}, {"LOCATION": "JPN", "TIME": 2001, "Value": 38428.16601}, {"LOCATION": "JPN", "TIME": 2002, "Value": 37652.11171}, {"LOCATION": "JPN", "TIME": 2003, "Value": 37684.43001}, {"LOCATION": "JPN", "TIME": 2004, "Value": 38313.83381}, {"LOCATION": "JPN", "TIME": 2005, "Value": 39299.41339}, {"LOCATION": "JPN", "TIME": 2006, "Value": 39276.00623}, {"LOCATION": "JPN", "TIME": 2007, "Value": 39170.83127}, {"LOCATION": "JPN", "TIME": 2008, "Value": 38855.89438}, {"LOCATION": "JPN", "TIME": 2009, "Value": 38299.65774}, {"LOCATION": "JPN", "TIME": 2010, "Value": 38420.98993}, {"LOCATION": "JPN", "TIME": 2011, "Value": 39037.3039}, {"LOCATION": "JPN", "TIME": 2012, "Value": 38387.61745}, {"LOCATION": "JPN", "TIME": 2013, "Value": 38417.8415}, {"LOCATION": "JPN", "TIME": 2014, "Value": 37725.99745}, {"LOCATION": "JPN", "TIME": 2015, "Value": 37542.47425}, {"LOCATION": "JPN", "TIME": 2016, "Value": 38056.04218}, {"LOCATION": "JPN", "TIME": 2017, "Value": 38150.9261}, {"LOCATION": "JPN", "TIME": 2018, "Value": 38583.62337}, {"LOCATION": "JPN", "TIME": 2019, "Value": 39077.01578}, {"LOCATION": "JPN", "TIME": 2020, "Value": 38850.01724}, {"LOCATION": "JPN", "TIME": 2021, "Value": 39711.42974}, {"LOCATION": "KOR", "TIME": 1997, "Value": 29267.89972}, {"LOCATION": "KOR", "TIME": 1998, "Value": 28965.58278}, {"LOCATION": "KOR", "TIME": 1999, "Value": 29231.74513}, {"LOCATION": "KOR", "TIME": 2000, "Value": 29505.49468}, {"LOCATION": "KOR", "TIME": 2001, "Value": 30528.1374}, {"LOCATION": "KOR", "TIME": 2002, "Value": 31577.94839}, {"LOCATION": "KOR", "TIME": 2003, "Value": 32744.80871}, {"LOCATION": "KOR", "TIME": 2004, "Value": 33483.63229}, {"LOCATION": "KOR", "TIME": 2005, "Value": 34516.49977}, {"LOCATION": "KOR", "TIME": 2006, "Value": 34961.13978}, {"LOCATION": "KOR", "TIME": 2007, "Value": 35717.36758}, {"LOCATION": "KOR", "TIME": 2008, "Value": 35610.86527}, {"LOCATION": "KOR", "TIME": 2009, "Value": 35795.43898}, {"LOCATION": "KOR", "TIME": 2010, "Value": 36357.64976}, {"LOCATION": "KOR", "TIME": 2011, "Value": 36834.50954}, {"LOCATION": "KOR", "TIME": 2012, "Value": 36293.25224}, {"LOCATION": "KOR", "TIME": 2013, "Value": 37209.09411}, {"LOCATION": "KOR", "TIME": 2014, "Value": 37286.95007}, {"LOCATION": "KOR", "TIME": 2015, "Value": 38323.14955}, {"LOCATION": "KOR", "TIME": 2016, "Value": 39446.5165}, {"LOCATION": "KOR", "TIME": 2017, "Value": 40374.01102}, {"LOCATION": "KOR", "TIME": 2018, "Value": 41765.22889}, {"LOCATION": "KOR", "TIME": 2019, "Value": 43199.51525}, {"LOCATION": "KOR", "TIME": 2020, "Value": 43341.63014}, {"LOCATION": "KOR", "TIME": 2021, "Value": 42747.10946}, {"LOCATION": "GBR", "TIME": 1997, "Value": 36203.3773}, {"LOCATION": "GBR", "TIME": 1998, "Value": 36778.92632}, {"LOCATION": "GBR", "TIME": 1999, "Value": 38737.80624}, {"LOCATION": "GBR", "TIME": 2000, "Value": 40560.78013}, {"LOCATION": "GBR", "TIME": 2001, "Value": 42104.30909}, {"LOCATION": "GBR", "TIME": 2002, "Value": 42699.27293}, {"LOCATION": "GBR", "TIME": 2003, "Value": 43911.19177}, {"LOCATION": "GBR", "TIME": 2004, "Value": 45191.34656}, {"LOCATION": "GBR", "TIME": 2005, "Value": 45236.11604}, {"LOCATION": "GBR", "TIME": 2006, "Value": 46501.39465}, {"LOCATION": "GBR", "TIME": 2007, "Value": 47698.90781}, {"LOCATION": "GBR", "TIME": 2008, "Value": 46589.52385}, {"LOCATION": "GBR", "TIME": 2009, "Value": 46709.55614}, {"LOCATION": "GBR", "TIME": 2010, "Value": 46909.88956}, {"LOCATION": "GBR", "TIME": 2011, "Value": 46073.27169}, {"LOCATION": "GBR", "TIME": 2012, "Value": 45524.87203}, {"LOCATION": "GBR", "TIME": 2013, "Value": 46021.95665}, {"LOCATION": "GBR", "TIME": 2014, "Value": 46045.38067}, {"LOCATION": "GBR", "TIME": 2015, "Value": 46812.63171}, {"LOCATION": "GBR", "TIME": 2016, "Value": 47512.24302}, {"LOCATION": "GBR", "TIME": 2017, "Value": 47613.88963}, {"LOCATION": "GBR", "TIME": 2018, "Value": 47872.06361}, {"LOCATION": "GBR", "TIME": 2019, "Value": 48615.86909}, {"LOCATION": "GBR", "TIME": 2020, "Value": 48563.76428}, {"LOCATION": "GBR", "TIME": 2021, "Value": 49979.25568}, {"LOCATION": "USA", "TIME": 1997, "Value": 52067.25383}, {"LOCATION": "USA", "TIME": 1998, "Value": 54211.98145}, {"LOCATION": "USA", "TIME": 1999, "Value": 55641.52428}, {"LOCATION": "USA", "TIME": 2000, "Value": 57498.90352}, {"LOCATION": "USA", "TIME": 2001, "Value": 57939.66286}, {"LOCATION": "USA", "TIME": 2002, "Value": 58405.47923}, {"LOCATION": "USA", "TIME": 2003, "Value": 59033.83901}, {"LOCATION": "USA", "TIME": 2004, "Value": 60127.40444}, {"LOCATION": "USA", "TIME": 2005, "Value": 60184.21701}, {"LOCATION": "USA", "TIME": 2006, "Value": 61084.88686}, {"LOCATION": "USA", "TIME": 2007, "Value": 62241.94589}, {"LOCATION": "USA", "TIME": 2008, "Value": 62088.50344}, {"LOCATION": "USA", "TIME": 2009, "Value": 62711.30944}, {"LOCATION": "USA", "TIME": 2010, "Value": 63264.81023}, {"LOCATION": "USA", "TIME": 2011, "Value": 63349.43067}, {"LOCATION": "USA", "TIME": 2012, "Value": 63890.22553}, {"LOCATION": "USA", "TIME": 2013, "Value": 63587.77307}, {"LOCATION": "USA", "TIME": 2014, "Value": 64513.44106}, {"LOCATION": "USA", "TIME": 2015, "Value": 66139.51337}, {"LOCATION": "USA", "TIME": 2016, "Value": 66259.72473}, {"LOCATION": "USA", "TIME": 2017, "Value": 66933.97284}, {"LOCATION": "USA", "TIME": 2018, "Value": 67663.83608}, {"LOCATION": "USA", "TIME": 2019, "Value": 68842.30662}, {"LOCATION": "USA", "TIME": 2020, "Value": 72806.75401}, {"LOCATION": "USA", "TIME": 2021, "Value": 74737.84535}]
+  },
+
+  "transform": [
+    {"filter": "datum.TIME == yearInput"}
+  ],
+
+  "width":"container",
+
+  "params": [
+    {"name":"yearInput", "value":1997,
+    "bind":{
+      "input": "range",
+      "min":1997,
+      "max": 2021,
+      "step": 1,
+      "name": "Year: "
+      }
+      }
+  ],
+
+  "mark": {
+    "type":"bar"
+    },
+
+  "encoding": {
+    "x": {"field": "LOCATION", "type": "nominal", "axis": {"labelAngle": 290}, "title":"Country"},
+    "y": {"field": "Value", "type": "quantitative", "title":"Average wage in USD"},
+    "color": {"field": "LOCATION", "type": "nominal", "legend":null}
+  }
+}

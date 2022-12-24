@@ -8,6 +8,20 @@ body{
  
 }
 
+
+h1, h2, h3 {
+    color:#000281;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+p {
+    color: #565656;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
 .header {
     background-color: rgb(22,32,58);
     width: 100%;
@@ -18,6 +32,14 @@ body{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+
+.header h1 {
+    color: white;
+}
+
+
+
+/* Navigation Bar */
 
 .topnav {
     overflow: hidden;
@@ -33,6 +55,7 @@ body{
     padding: 14px 16px;
     text-decoration: none;
     font-size: 16px;
+    font-family: sans-serif;
     outline: none;
     border: none;
     border-radius: 15px;
@@ -112,32 +135,18 @@ body{
     background-color: rgb(22,32,58);
 }
 
-h1, h2 {
-    color:#000281;
-    font-family: sans-serif;
-    text-align: center;
-}
 
-h3 {
-    color: #565656;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
 
-p {
-    color: #565656;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
+
+
+
 
 
 .myWeek1{
     margin: auto;
-    
-    justify-content: center;
-    align-items: center;
+    display:block;
 
-    width: 100%;
+    width: 95%;
     background-color: #fafdf3;
       
     border: 3px solid #303F67;
@@ -145,13 +154,6 @@ p {
 
     padding-bottom: 250px;
 }
-
-
-
-.header h1 {
-    color: white;
-}
-
 
 .myWeek2{
     margin: auto;
@@ -165,23 +167,21 @@ p {
     border-color: rgb(32,42,68);
 }
 
-
-
-/* Set the appearance of the class, chart */
 .chart{
     background-color: rgb(32,42,68);
     color:#00a767;
-    
-    
     width:350px;
-    border: 1px solid red;
     border-radius: 10px;
-    padding: 5px
-    
+    padding: 5px;
+}
+
+#Chart6{
+    width: 650px;
+}
+
+.chart_block{
+    text-align: center;
+    padding: 0px 5% 0px 5%;
 }
     
 
-/* Set the apperance for a particular chart */
-#Chart1{
-    border-color: blue;   
-}
