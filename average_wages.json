@@ -10,6 +10,7 @@
   ],
 
   "width":"container",
+  "height":"container",
 
   "params": [
     {"name":"yearInput", "value":1997,

@@ -1,0 +1,18 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"width": "container",
+  "height": "container",
+  "title": {
+    "text": "Map of Finland",
+    "subtitle": "Sectioned by municipalities",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/finland_topojson.json",
+    "format": {"type": "topojson", "feature":"kuntarajat"}},
+    "projection": {"type":"mercator"},
+    "mark": {"type":"geoshape"},
+  "encoding": {"tooltip": {"field": "properties.name", "type": "nominal"}
+  }
+  }

@@ -9,8 +9,8 @@
     "color": "#179fdb",
     "subtitleColor":"#179fdb"},
 
-  "width":280,
-  "height":300,
+  "width":"container",
+  "height":"container",
 
   "config": {
     "background":"#122b39",
@@ -72,16 +72,16 @@
             "type": "temporal",
             "title": null,
             "axis": {
-            "grid": false,
-            "labelColor":"#cbc7cf"}},
+              "grid": false,            
+              "labelColor":"#00a767"}},
 
             "y": {
             "field": "value",                
             "type": "quantitative",
             "title":null,
             "axis": {
-                "grid": false,
-                "labelColor":"#cbc7cf"}}}},
+                "grid": false,                
+                "labelColor":"#00a767"}}}},
  
     {
       "encoding": {    
@@ -89,6 +89,7 @@
           "aggregate": "max", 
           "field": "dateClean", 
           "type": "temporal"},
+
         
         "y": {
           "aggregate": {"argmax": "dateClean"},

@@ -1,0 +1,62 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+  
+   "title": {
+    "text": "Redundancy Rate",
+    "subtitle":["ILO redundancy rate UK per 1,000 employees. Source: ONS"],
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "color": "#179fdb",
+    "subtitleColor":"#179fdb"},
+  
+  "config": {
+    "background":"#122b39",
+    "view": {
+      "stroke": "transparent"}},
+
+    "width":"container",
+    "height":"container",
+  
+  
+    "data": {
+      "name":"myData",
+      "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/ons_data-BEIR.json",
+      "format": {"type": "json", "property": "years"}},
+  
+  
+    "mark": {
+    "type": "line",
+    "point": false,
+    "interpolate": "linear",
+    "color":"#f4c245"
+  },
+  
+    "encoding": {
+     
+    "x": {
+      "field": "year",
+      "type": "temporal",
+      "axis": {
+        "title": "",
+        "grid": false,
+        "labelSeparation": 10,
+        "domainColor":"dimgrey",
+        "labelColor":"#00a767",
+        "tickColor":"pink",
+        "gridColor":"dimgrey"
+      }},
+  
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "",
+      "axis": {
+        "grid": false,
+        "domainColor":"dimgrey",
+        "labelColor":"#00a767",
+        "tickColor":"pink",
+        "gridColor":"dimgrey"}
+        }
+     }
+  }

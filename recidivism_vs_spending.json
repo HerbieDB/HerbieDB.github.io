@@ -1,0 +1,60 @@
+{ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "title": {
+      "text": "State Recidivism Rate vs Corrections Expenditure per Prisoner",
+      "subtitle":["Recidivism Rate (x), State corrections expenditure per prisoner (y).","Size of points based on prison popluation", ""],
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+
+  "config": {
+    "background":"white",
+    "view": {
+      "stroke": "transparent"}},
+  
+    "data": {
+      "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/Project_Data.csv",
+      "format":{"type":"csv"}},
+
+    "transform": [
+      {"calculate": "datum['Total direct expenditures on corrections ($ 000s)']*1000/datum.prisonPop2020","as": "Spending per prisoner"},
+      {"calculate": "datum.prisonPop2020/datum.pop2020*100000","as": "Prison Population per 100,000"}
+    ],
+  
+    "mark": {
+      "type":"circle",
+      "color":"green",
+      "opacity":0.7},
+    
+    "height": "container",
+    "width": "container",
+  
+    "encoding": {
+      "x": {
+        "field": "recidivismRate", 
+        "type": "quantitative",
+        "axis":{"grid": false},
+        "title":null},
+  
+      "y": {
+        "field": "Spending per prisoner", 
+        "type": "quantitative",
+        "axis":{"grid": false},
+        "title":null},
+  
+      "size": {
+        "field": "Prison Population per 100,000", 
+        "type": "quantitative",
+        "legend":null},
+
+      "tooltip":[
+        {"field":"State", "type": "ordinal", "title":"State"},
+        {"field":"recidivismRate", "type": "quantitative", "title":"Recidivism Rate", "format":".0f"},
+        {"field":"Spending per prisoner", "type": "quantitative", "format":".0f"},
+        {"field":"Prison Population per 100,000", "type": "quantitative", "title":"Prison Pop per 100k", "format":".0f"}
+
+      ]
+     }
+  }

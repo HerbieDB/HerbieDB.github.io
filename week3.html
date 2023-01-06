@@ -8,20 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Title for the page -->
     <title>Week 3</title>
 
-    <!-- Link to my style sheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <!--The next three lines allow the Vega embed-->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
 </head>
 
 <body>
-    <!-- A div that contains a group of items for week 1. Can be useful for setting background colours etc.  -->
     <div class="header">
         <h1>Data Science for Economists.</h1>
             <div class="topnav">
@@ -34,7 +30,7 @@
                         <a href="week3.html">Week 3</a>
                         <a href="week4.html">Week 4</a>
                         <a href="week5.html">Week 5</a>
-                        <a href="week6.html">Week 6</a>
+                        <a href="">Reading Week</a>
                         <a href="week7.html">Week 7</a>
                         <a href="week8.html">Week 8</a>
                         <a href="week9.html">Week 9</a>
@@ -46,26 +42,21 @@
             </div>
     </div>
     
-    <div class="myWeek1">
+    <div class="main_div">
         
         <h2>Week 3</h2>
         
-        <div style="display:flex; justify-content: space-evenly;"> <!--Larger container around the charts so that I can adjust the positioning of them, 
-            while keeping the titles and descriptions above the charts. Need to figure out how to center align my chart divs-->
-            <div class="chart_block">
-                <h3>Average Wages</h3>
-                <div class="chart" id="Chart5"></div>
-                <p>This chart has been generated using a data source defined inline in the Vega-lite specification. It shows average wages over time in 4 countries using data from the OECD.</p>
-            </div>
+        <div class="chart_block">
+            <h3>Average Wages</h3>
+            <div class="chart" id="Chart5"></div>
+            <p>This chart has been generated using a data source defined inline in the Vega-lite specification. It shows average wages over time in 4 countries using data from the OECD.</p>
         </div>
         
-        <div style="display:flex; justify-content: space-evenly;"> <!--Larger container around the charts so that I can adjust the positioning of them, 
-            while keeping the titles and descriptions above the charts. Need to figure out how to center align my chart divs-->
-            <div class="chart_block">
-                <h3>Average Wages</h3>
-                <div class="chart" id="Chart6"></div>
-                <p>This chart has been generated using the same data, but with the "line" visualisation. I chose this as all the data from the previous chart can be seen instantly and allows easier comparison of the data points over time. </p>
-            </div>
+        
+        <div class="chart_block">
+            <h3>Average Wages</h3>
+            <div class="wide_chart" id="Chart6"></div>
+            <p>This chart has been generated using the same data, but with the "line" visualisation. I chose this as all the data from the previous chart can be seen instantly and allows easier comparison of the data points over time. </p>
         </div>
     </div>  
 </body>

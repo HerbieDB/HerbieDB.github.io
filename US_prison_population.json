@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "width": "container",
+    "height": "container",
+    "view": {"stroke": "transparent"},
+  
+     "title": {
+      "text": "Prison population in the USA by State 2020",
+      "fontSize": 12,
+      "subtitle":["source: World Population Review", ""],
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10, "anchor": "middle"
+    },
+    
+    "data": {
+      "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/USStatesGeo.json",
+      "format": {"property": "features"}
+    },
+  
+    "transform": [{
+    "lookup": "properties.NAME",
+    "from": {
+      "key": "State",
+      "fields": ["prisonPop2020"],
+      "data": {"url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/USStatePrisonData.csv"}}}],
+  
+    "projection": {"type": "albersUsa"},
+    "mark": "geoshape", 
+  
+    "encoding":{
+      "color":{
+        "field":"prisonPop2020",
+        "legend":{
+          "title": null,
+          "orient": "right",
+          "direction": "vertical"},
+          "type": "quantitative",
+          "scale":{
+            "scheme":"lightorange",
+            "reverse": false}},
+      "tooltip":[
+        {"field":"properties.NAME", "title": "State"},
+        {"field":"prisonPop2020", "title": "Prison Population:", "format": ",d"}
+      ]
+    }}

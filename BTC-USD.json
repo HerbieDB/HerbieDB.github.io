@@ -3,8 +3,8 @@
   
   
    "title": {
-    "text": "Ethereum: long run",
-    "subtitle":"Daily ETH price in USD. Source: Coinbase via FRED",
+    "text": "Bitcoin: long run",
+    "subtitle":"Daily BTC price in USD. Source: Coinbase via FRED",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
     "anchor": "middle",
@@ -24,7 +24,7 @@
   
     "data": {
       "name":"myData",
-      "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/CBETHUSD.csv"},
+      "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/CBBTCUSD.csv"},
   
   
     "mark": {
@@ -44,10 +44,10 @@
   ],
   
     "params": [    
-      {"name":"minYear", "value":2016,
+      {"name":"minYear", "value":2014,
          "bind":{
            "input": "range",
-           "min": 2016, 
+           "min": 2014, 
            "max": 2022, 
            "step": 1,
            "name": "Start year:"}
@@ -56,7 +56,7 @@
       {"name":"maxYear", "value":2022,
          "bind":{
            "input": "range",
-           "min": 2016, 
+           "min": 2014, 
            "max": 2022, 
            "step": 1,
            "name": "End year:"}
@@ -82,7 +82,7 @@
       }},
   
     "y": {
-      "field": "CBETHUSD",
+      "field": "CBBTCUSD",
       "type": "quantitative",
       "title": "",
       "axis": {

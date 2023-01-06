@@ -1,28 +1,21 @@
 {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-      "text": "IMF Lending Outstanding",
-      "subtitle":"Credit outstanding to all members, SDRs (billions). Source: IMF",
+      "text": "IMF Lending Outstanding as Percentage of World GDP",
+      "subtitle":"Credit outstanding to all members. Source: IMF, World Bank",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
       "color": "#179fdb",
       "subtitleColor":"#179fdb"},
   
-
-
   "config": {
     "background":"#122b39",
     "view": {
       "stroke": "transparent"}},
       
     
-  "data":{"url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/data_IMF_creditOutstanding.csv"},
-  
-  "transform": [
-    {"calculate": "datum.Totals/1000000000", "as": "billions"}
-  ],
-
+  "data":{"url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/data_IMF_creditOutstanding_adjusted.csv"},
 
   "height": "container",
   "width": "container",
@@ -46,7 +39,7 @@
          "labelColor":"#00a767"}},
 
       "y": {
-        "field": "billions",
+        "field": "Percentage of World GDP",
         "type": "quantitative",
         "title": "",
         "axis": {

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Title for the page -->
-    <title>Herbie Data Science</title>
+    <title>Herbie Data Science Project</title>
 
     <!-- Link to my style sheet -->
     <link rel="stylesheet" href="styles.css">
@@ -23,7 +23,6 @@
 
 
 <body>
-    <!-- A div that contains a group of items for week 1. Can be useful for setting background colours etc.  -->
     <div class="header">
         <h1>Data Science for Economists.</h1>
             <div class="topnav">
@@ -36,7 +35,7 @@
                         <a href="week3.html">Week 3</a>
                         <a href="week4.html">Week 4</a>
                         <a href="week5.html">Week 5</a>
-                        <a href="week6.html">Week 6</a>
+                        <a href="">Reading Week</a>
                         <a href="week7.html">Week 7</a>
                         <a href="week8.html">Week 8</a>
                         <a href="week9.html">Week 9</a>
@@ -47,59 +46,50 @@
                 <a href="https://github.com/HerbieDB/HerbieDB.github.io" target="_blank">github</a>
             </div>
     </div>
-    <div class="myWeek1">
-        <h2>Week 1:</h2>
+
+    <div class="main_div">
+
+        <h2>Project: US Prison Data</h2>
+
+        <p></p>
+        <p style="width:650px; margin:auto;">Originally I wanted to compare global prison data, but due to differences in reporting and availability of data (particularly around recidivisim), I had to confine my comparisons to the US. While there still are differences in reporting (more info at the end of this page), I was able to make comparisons much easier than on a global scale.</p>
+
+
+
+
+
+        <h3>Chart 1:</h3>
 
         
-        <div style="display:flex; justify-content: space-evenly;"> <!--Larger container around the charts so that I can adjust the positioning of them, 
-            while keeping the titles and descriptions above the charts. Need to figure out how to center align my chart divs-->
-
-            <div>
-                <h3>Ethereum</h3>
-                <p>The first chart tracks Ethereum price in USD between 2016 and 2022.</p>
-                <div class="chart" id="Chart1"></div>
-            </div>
-
-            <div>
-                <h3>Inflation</h3>
-                <p>My second chart looks at CPI inflation in the UK between 1988 and 2022.</p>
-                <div class="chart" id="Chart2"> </div>            
-            </div>
-
+        <div class="chart_block">
+            <p>My first chart shows most of the data I will be using in my analysis clearly on a map, where each field can be selected to view.</p>
+            <div class="map" id="Chart25"></div>
+            
         </div>
+
+
+        <h3>Chart 2:</h3>
+
         
+        <div class="chart_block">
+            <p>My second chart plots each state's recidivism rate against the spending per prisoner, with the bubbles indicating the prisoners per 100,000.</p>
+            <div class="map" id="Chart26"></div>
+            
+        </div>
+
     </div> 
-
-    <div class="myWeek1">
-        <h2>Week 2:</h2>
-
-        <div style="display:flex; justify-content: space-evenly;"> <!--Larger container around the charts so that I can adjust the positioning of them, 
-            while keeping the titles and descriptions above the charts-->
-            <div>
-                <h3>IMF Lending</h3>
-                <div class="chart" id="Chart3"></div>
-            </div>
-
-            <div>
-                <h3>IMF Lending as Percentage of World GDP</h3>
-                <div class="chart" id="Chart4"></div>
-            </div>
-        </div>     
-    </div>
+    <p>Data organisation can be found <a href="https://colab.research.google.com/drive/16r4fHsCISOitFKuY-H5sQBMC2hCx1ljq?usp=sharing" target="_blank">here.</a></p>
+    
 </body>
 
 
 <script>
     //Define charts:
-    var myChart1 = "ETH-USD.json";
-    var myChart2 = "UKinflation.json";
-    var myChart3 = "imflending.json";
-    var myChart4 = "imflendingGDP.json";
+    var myChart25 = "project_data_map.json";
+    var myChart26 = "recidivism_vs_spending.json";
     // Embed charts:
-    vegaEmbed('#Chart1', myChart1);
-    vegaEmbed('#Chart2', myChart2);
-    vegaEmbed('#Chart3', myChart3);
-    vegaEmbed('#Chart4', myChart4);
+    vegaEmbed('#Chart25', myChart25);
+    vegaEmbed('#Chart26', myChart26);
 </script>
 
 </html>

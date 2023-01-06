@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Week 7</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Data Science for Economists.</h1>
+            <div class="topnav">
+                <a href="index.html">Project</a>
+                <div class="dropdown">
+                    <button class="main_menu">Portfolio</button>
+                    <div class="dropdown-content">
+                        <a href="week1.html">Week 1</a>
+                        <a href="week2.html">Week 2</a>
+                        <a href="week3.html">Week 3</a>
+                        <a href="week4.html">Week 4</a>
+                        <a href="week5.html">Week 5</a>
+                        <a href="">Reading Week</a>
+                        <a href="week7.html">Week 7</a>
+                        <a href="week8.html">Week 8</a>
+                        <a href="week9.html">Week 9</a>
+                        <a href="week10.html">Week 10</a>
+                    </div>
+                </div>
+                <a href="https://rapidcharts.io/datascience" target="_blank">RapidCharts</a>
+                <a href="https://github.com/HerbieDB/HerbieDB.github.io" target="_blank">github</a>
+            </div>
+    </div>
+    
+    <div class="main_div">
+        
+        <h2>Week 7</h2>
+        
+        <div class="chartContainer"> <!--Larger container around the charts so that I can adjust the positioning of them, 
+            while keeping the titles and descriptions above the charts.-->
+            <div class="chart_block">
+                <h3>Base Map</h3>
+                <div class="map" id="Chart17"></div>
+                <p>The TopoJSON used to create this map was found <a href="https://github.com/lucified/finland-municipalities-topojson" target="_blank">here.</a></p>
+            </div>
+        </div>
+        
+        <div class="chartContainer"> <!--Larger container around the charts so that I can adjust the positioning of them, 
+            while keeping the titles and descriptions above the charts.-->
+            <div class="chart_block">
+                <h3>Chlorapleth</h3>
+                <div class="map" id="Chart18"></div>
+                <p>This map shows the US prison population in 2020. </p>
+            </div>
+        </div>
+    </div>  
+</body>
+
+
+<script>
+    //Define charts:    
+    var myChart17 = "finland_map.json";
+    var myChart18 = "US_prison_population.json";
+
+    // Embed charts:
+    vegaEmbed('#Chart17', myChart17);
+    vegaEmbed('#Chart18', myChart18);
+</script>
+
+</html>
+
+

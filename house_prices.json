@@ -1,0 +1,15 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple bar chart with embedded data.",
+    "data": {
+      "values": [{"City": "Aberdeen", "Average price": "142300"}, {"City": "Belfast", "Average price": "167700"}, {"City": "Birmingham", "Average price": "203400"}, {"City": "Bournemouth", "Average price": "346500"}, {"City": "Bristol", "Average price": "333600"}, {"City": "Cambridge", "Average price": "467300"}, {"City": "Cardiff", "Average price": "254300"}, {"City": "Edinburgh", "Average price": "264300"}, {"City": "Glasgow", "Average price": "140500"}, {"City": "Leeds", "Average price": "206300"}, {"City": "Leicester", "Average price": "224600"}, {"City": "Liverpool", "Average price": "153100"}, {"City": "London", "Average price": "518900"}, {"City": "Manchester", "Average price": "216900"}, {"City": "Newcastle", "Average price": "147600"}, {"City": "Nottingham", "Average price": "198000"}, {"City": "Oxford", "Average price": "451000"}, {"City": "Portsmouth", "Average price": "284300"}, {"City": "Sheffield", "Average price": "170000"}, {"City": "Southampton", "Average price": "261500"}, {"City": "UK", "Average price": "259100"}]
+    },
+    "width":"container",
+    "height":"container",
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "City", "type": "nominal", "axis": {"labelAngle": 60}},
+      "y": {"field": "Average price", "type": "quantitative", "title":"Average price (£'s)"}
+    }
+  }
+  

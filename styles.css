@@ -142,7 +142,7 @@ p {
 
 
 
-.myWeek1{
+.main_div{
     margin: auto;
     display:block;
 
@@ -155,29 +155,25 @@ p {
     padding-bottom: 250px;
 }
 
-.myWeek2{
-    margin: auto;
-    max-width: 600px;
-    background-color: #303F67;
-
-      
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 15px;
-    border-color: rgb(32,42,68);
-}
 
 .chart{
     background-color: rgb(32,42,68);
     color:#00a767;
-    width:350px;
+    width:500px;
+    height:300px;
     border-radius: 10px;
     padding: 5px;
 }
 
-#Chart6{
-    width: 650px;
+.wide_chart{
+    background-color: rgb(32,42,68);
+    color:#00a767;
+    width:650px;
+    height:300px;
+    border-radius: 10px;
+    padding: 5px;
 }
+
 
 .chart_block{
     text-align: center;
@@ -185,3 +181,38 @@ p {
 }
     
 
+.chartContainer{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+
+.gridContainer{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: min-content;
+    gap: 50px;
+    justify-content:center;
+    overflow: auto;
+    color:#00a767;
+}
+
+.gridChart{
+    background-color: rgb(32,42,68);
+    color:#00a767;
+    width:350px;
+    height:300px;
+    border-radius: 10px;
+    padding: 5px;
+    display: block;
+    overflow:auto;
+}
+
+.map{
+    background-color: rgb(32,42,68);
+    color:#00a767;
+    width:600px;
+    height:450px;
+    border-radius: 10px;
+    padding: 5px;
+}

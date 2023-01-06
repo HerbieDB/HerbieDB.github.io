@@ -3,8 +3,8 @@
   
   
    "title": {
-    "text": "Ethereum: long run",
-    "subtitle":"Daily ETH price in USD. Source: Coinbase via FRED",
+    "text": "NASDAQ",
+    "subtitle":"Daily NASDAQ closing price in USD. Source: Yahoo Finance",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
     "anchor": "middle",
@@ -16,15 +16,13 @@
     "view": {
       "stroke": "transparent"}},
   
-  
-  
     "width":"container",
     "height":"container",
   
   
     "data": {
       "name":"myData",
-      "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/CBETHUSD.csv"},
+      "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/nasdaq_prices.csv"},
   
   
     "mark": {
@@ -36,7 +34,7 @@
   
   
     "transform": [
-      {"calculate": "timeParse(datum.DATE, '%Y-%m-%d')", "as": "date"},
+      {"calculate": "timeParse(datum.Date, '%Y-%m-%d')", "as": "date"},
       {"calculate": "year(datum.date)", "as": "year"},
   
       {"filter": "datum.year>=minYear"},
@@ -44,10 +42,10 @@
   ],
   
     "params": [    
-      {"name":"minYear", "value":2016,
+      {"name":"minYear", "value":1971,
          "bind":{
            "input": "range",
-           "min": 2016, 
+           "min": 1971, 
            "max": 2022, 
            "step": 1,
            "name": "Start year:"}
@@ -56,7 +54,7 @@
       {"name":"maxYear", "value":2022,
          "bind":{
            "input": "range",
-           "min": 2016, 
+           "min": 1971, 
            "max": 2022, 
            "step": 1,
            "name": "End year:"}
@@ -82,7 +80,7 @@
       }},
   
     "y": {
-      "field": "CBETHUSD",
+      "field": "Close",
       "type": "quantitative",
       "title": "",
       "axis": {
