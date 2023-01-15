@@ -1,55 +1,55 @@
-,Age,Year,Percent Arrested
-0,All released prisoners,Year 1,43.9
-1,24 or younger,Year 1,51.8
-2,25-29,Year 1,45.9
-3,30-34,Year 1,43.9
-4,35-39,Year 1,44.6
-5,40 or older,Year 1,37.8
-6,All released prisoners,Year 2,16.2
-7,24 or younger,Year 2,17.0
-8,25-29,Year 2,16.8
-9,30-34,Year 2,16.5
-10,35-39,Year 2,16.8
-11,40 or older,Year 2,15.1
-12,All released prisoners,Year 3,8.3
-13,24 or younger,Year 3,7.7
-14,25-29,Year 3,8.8
-15,30-34,Year 3,8.2
-16,35-39,Year 3,8.7
-17,40 or older,Year 3,8.1
-18,All released prisoners,Year 4,5.1
-19,24 or younger,Year 4,4.8
-20,25-29,Year 4,5.5
-21,30-34,Year 4,5.3
-22,35-39,Year 4,4.9
-23,40 or older,Year 4,5.1
-24,All released prisoners,Year 5,3.5
-25,24 or younger,Year 5,3.4
-26,25-29,Year 5,3.8
-27,30-34,Year 5,3.5
-28,35-39,Year 5,3.4
-29,40 or older,Year 5,3.5
-30,All released prisoners,Year 6,2.3
-31,24 or younger,Year 6,2.0
-32,25-29,Year 6,2.5
-33,30-34,Year 6,2.3
-34,35-39,Year 6,2.2
-35,40 or older,Year 6,2.5
-36,All released prisoners,Year 7,1.7
-37,24 or younger,Year 7,1.7
-38,25-29,Year 7,1.5
-39,30-34,Year 7,1.9
-40,35-39,Year 7,1.7
-41,40 or older,Year 7,1.9
-42,All released prisoners,Year 8,1.3
-43,24 or younger,Year 8,1.0
-44,25-29,Year 8,1.3
-45,30-34,Year 8,1.7
-46,35-39,Year 8,1.2
-47,40 or older,Year 8,1.4
-48,All released prisoners,Year 9,1.0
-49,24 or younger,Year 9,0.7
-50,25-29,Year 9,0.9
-51,30-34,Year 9,1.0
-52,35-39,Year 9,0.9
-53,40 or older,Year 9,1.2
+,Age,Year,Percent Arrested,Cumulative Percent Arrested
+0,All released prisoners,Year 1,43.9,43.9
+1,24 or younger,Year 1,51.8,51.8
+2,25-29,Year 1,45.9,45.9
+3,30-34,Year 1,43.9,43.9
+4,35-39,Year 1,44.6,44.6
+5,40 or older,Year 1,37.8,37.8
+6,All released prisoners,Year 2,16.2,60.1
+7,24 or younger,Year 2,17,68.8
+8,25-29,Year 2,16.8,62.7
+9,30-34,Year 2,16.5,60.4
+10,35-39,Year 2,16.8,61.4
+11,40 or older,Year 2,15.1,52.9
+12,All released prisoners,Year 3,8.3,68.4
+13,24 or younger,Year 3,7.7,76.5
+14,25-29,Year 3,8.8,71.5
+15,30-34,Year 3,8.2,68.6
+16,35-39,Year 3,8.7,70.1
+17,40 or older,Year 3,8.1,61
+18,All released prisoners,Year 4,5.1,73.5
+19,24 or younger,Year 4,4.8,81.3
+20,25-29,Year 4,5.5,77
+21,30-34,Year 4,5.3,73.9
+22,35-39,Year 4,4.9,75
+23,40 or older,Year 4,5.1,66.1
+24,All released prisoners,Year 5,3.5,77
+25,24 or younger,Year 5,3.4,84.7
+26,25-29,Year 5,3.8,80.8
+27,30-34,Year 5,3.5,77.4
+28,35-39,Year 5,3.4,78.4
+29,40 or older,Year 5,3.5,69.6
+30,All released prisoners,Year 6,2.3,79.3
+31,24 or younger,Year 6,2,86.7
+32,25-29,Year 6,2.5,83.3
+33,30-34,Year 6,2.3,79.7
+34,35-39,Year 6,2.2,80.6
+35,40 or older,Year 6,2.5,72.1
+36,All released prisoners,Year 7,1.7,81
+37,24 or younger,Year 7,1.7,88.4
+38,25-29,Year 7,1.5,84.8
+39,30-34,Year 7,1.9,81.6
+40,35-39,Year 7,1.7,82.3
+41,40 or older,Year 7,1.9,74
+42,All released prisoners,Year 8,1.3,82.3
+43,24 or younger,Year 8,1,89.4
+44,25-29,Year 8,1.3,86.1
+45,30-34,Year 8,1.7,83.3
+46,35-39,Year 8,1.2,83.5
+47,40 or older,Year 8,1.4,75.4
+48,All released prisoners,Year 9,1,83.3
+49,24 or younger,Year 9,0.7,90.1
+50,25-29,Year 9,0.9,87
+51,30-34,Year 9,1,84.3
+52,35-39,Year 9,0.9,84.4
+53,40 or older,Year 9,1.2,76.6
