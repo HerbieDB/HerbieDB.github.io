@@ -1,76 +1,75 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": "container",
+  "height": "container",
+  "view": {"stroke": "transparent"},
+
+   "title": {
+    "text": "USA Prison Statistics",
+    "fontSize": 12,
+    "subtitle":["Sources: see Google Colab below", ""],
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10, "anchor": "middle"
+  },
   
-    "width": "container",
-    "height": "container",
-    "view": {"stroke": "transparent"},
-  
-     "title": {
-      "text": "USA Prison Statistics",
-      "fontSize": 12,
-      "subtitle":["Sources: see Google Colab below", ""],
-      "subtitleFontStyle":"italic",
-      "subtitleFontSize":10, "anchor": "middle"
-    },
+  "data": {
+    "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/USStatesGeo.json",
+    "format": {"property": "features"}
+  },
+
+  "transform": [{
+  "lookup": "properties.NAME",
+  "from": {
+    "key": "State",
+    "fields": ["High School Diploma or higher (Percent)","Bachelors Degree or higher (Percent)", "Advanced Degree (Percent)","Average Wage (USD)", "Total direct expenditures on corrections (USD 000s)", "Institutions DCE (USD 000s)", "Population", "Recidivism Rate (Percent)", "Operational Capacity (Percent)", "Gini Coefficient", "Unemployment Rate (Percent)", "Prison Population"],
+    "data": {"url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/Project_Data_Final.csv"}}},
     
-    "data": {
-      "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/USStatesGeo.json",
-      "format": {"property": "features"}
-    },
-  
-    "transform": [{
-    "lookup": "properties.NAME",
-    "from": {
-      "key": "State",
-      "fields": ["High School Diploma or higher","Bachelors Degree or higher", "Advanced Degree", "Total Taxes($ million)", "Per Capita", "pct ofPers Income", "Average Wage", "Average annual growth rate (current dollars) in 2010-2019", "Total direct expenditures on corrections ($ 000s)", "Institutions DCE", "Institutions Capital Outlay", "Institutions as percent of total","Other DCE", "Other Capital Outlay", "pop2020", "prisonPop2020", "recidivismRate"],
-      "data": {"url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/Project_Data.csv"}}},
-      
-      {"calculate": "datum.prisonPop2020/datum.pop2020*100000","as": "Prison Population per 100,000"},
-      {"calculate": "datum['Total direct expenditures on corrections ($ 000s)']*1000/datum.pop2020","as": "Cost to State taxpayers per capita"},
-      {"calculate": "datum.recidivismRate","as": "Recidivism Rate"},
-      {"calculate": "datum['Total direct expenditures on corrections ($ 000s)']*1000/datum.prisonPop2020","as": "Spending per prisoner"},
-      {"calculate": "datum.prisonPop2020","as": "Total Prison Population"},
-      {"calculate": "1000*datum['Total direct expenditures on corrections ($ 000s)']","as": "Total Corrections Expenditure"},
-      {"calculate": "datum['Bachelors Degree or higher']","as": "Education rate (Bachelors or more)"},
-      {"calculate": "datum['High School Diploma or higher']","as": "Education rate (High School or more)"},
-      {"calculate": "datum.pop2020","as": "Population"},
-      
+    {"calculate": "format(datum['Prison Population']/datum.Population*100000, '.0f')","as": "Prison Population per 100,000"},
+    {"calculate": "format(datum['Total direct expenditures on corrections (USD 000s)']*1000/datum.Population, '.0f')","as": "Cost to State taxpayers per capita (USD)"},
+    {"calculate": "format(datum['Total direct expenditures on corrections (USD 000s)']*1000/datum['Prison Population'], '.0f')","as": "Corrections Spending per Prisoner (USD)"},
+    {"calculate": "datum['Prison Population']","as": "Total Prison Population"},
+    {"calculate": "datum['Total direct expenditures on corrections (USD 000s)']","as": "Total Corrections Expenditure (USD 000s)"},
+    {"calculate": "datum['Bachelors Degree or higher (Percent)']","as": "Education rate: Bachelors or higher (Percent)"},
+    {"calculate": "datum['High School Diploma or higher (Percent)']","as": "Education rate: High School or higher (Percent)"},
+    
+    
 
-      
-      {"calculate": "datum[Selector]","as": "Field Selected"}
-      ],
-  
-
-    "params": [
-      {
-        "name":"Selector",
-        "value": "Prison Population per 100,000",
-        "bind": {
-          "input": "select",
-          "options": ["Prison Population per 100,000", "Cost to State taxpayers per capita", "Spending per prisoner", "Recidivism Rate", "Total Prison Population", "Population", "Total Corrections Expenditure", "Average Wage", "Education rate (High School or more)", "Education rate (Bachelors or more)"
-
-          ]
-        }
-      }
+    
+    {"calculate": "datum[Selector]","as": "Field Selected"}
     ],
 
 
-    "projection": {"type": "albersUsa"},
-    "mark": "geoshape", 
-  
-    "encoding":{
-      "color":{
-        "field":"Field Selected",
-        "legend":{
-          "title": null,
-          "orient": "right",
-          "direction": "vertical"},
-          "type": "quantitative",
-          "scale":{
-            "scheme":"lighttealblue",
-            "reverse": false}},
-      "tooltip":[
-        {"field":"properties.NAME", "title": "State"},
-        {"field":"Field Selected", "format": ",d"}
-      ]
-    }}
+  "params": [
+    {
+      "name":"Selector",
+      "value": "Prison Population per 100,000",
+      "bind": {
+        "input": "select",
+        "options": ["Prison Population per 100,000", "Cost to State taxpayers per capita (USD)", "Corrections Spending per Prisoner (USD)", "Recidivism Rate (Percent)", "Total Prison Population", "Population", "Total Corrections Expenditure (USD 000s)", "Average Wage (USD)", "Education rate: High School or higher (Percent)", "Education rate: Bachelors or higher (Percent)", "Unemployment Rate (Percent)", "Operational Capacity (Percent)", "Gini Coefficient"
+
+        ]
+      }
+    }
+  ],
+
+
+  "projection": {"type": "albersUsa"},
+  "mark": "geoshape", 
+
+  "encoding":{
+    "color":{
+      "field":"Field Selected",
+      "legend":{
+        "title": null,
+        "orient": "right",
+        "direction": "vertical"},
+        "type": "quantitative",
+        "scale":{
+          "scheme":"lighttealblue",
+          "reverse": false}},
+    "tooltip":[
+      {"field":"properties.NAME", "title": "State"},
+      {"field":"Field Selected", "title": "Value" , "format": ","}
+    ]
+  }}

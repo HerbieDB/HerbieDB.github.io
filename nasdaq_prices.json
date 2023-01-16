@@ -7,12 +7,9 @@
     "subtitle":"Daily NASDAQ closing price in USD. Source: Yahoo Finance",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
-    "anchor": "middle",
-    "color": "#179fdb",
-    "subtitleColor":"#179fdb"},
+    "anchor": "middle"},
   
   "config": {
-    "background":"#122b39",
     "view": {
       "stroke": "transparent"}},
   
@@ -42,7 +39,7 @@
   ],
   
     "params": [    
-      {"name":"minYear", "value":1971,
+      {"name":"minYear", "value":1990,
          "bind":{
            "input": "range",
            "min": 1971, 
@@ -51,7 +48,7 @@
            "name": "Start year:"}
       },
   
-      {"name":"maxYear", "value":2022,
+      {"name":"maxYear", "value":2002,
          "bind":{
            "input": "range",
            "min": 1971, 

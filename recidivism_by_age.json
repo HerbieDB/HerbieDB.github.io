@@ -1,0 +1,79 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+    "width": "container",
+    "height":"container",
+
+    "title": {
+      "text": "US Recidivism by Age Group, Years after release",
+      "subtitle":["Smaller bars with borders show the percentage of re-arrests in specified year after release.", "Total bar shows cumulative re-arrests for specified year and all previous years.","", "Source: Bureau of Justice Statistics - '2018 Update on Prisoner Recidivism: A 9-Year Follow-up Period (2005-2014)'"],
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+
+    "data": {
+      "url":"https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/Recidivism_by_Age_Long.csv",
+      "format": {"type":"csv"}},
+      
+  
+    "layer": [ {
+  
+        "mark": {
+          "type":"bar",
+          "orient":"vertical"
+        },
+        "encoding": {
+            "x": {
+                "field": "Year",
+                "axis": {"labelAngle": 0},
+                "stack": null
+            },
+            "y": {
+                "field": "Cumulative Percent Arrested",
+                "type": "quantitative",
+                "title": "Percent Re-arrested",
+                "stack": null
+            },
+            "xOffset": {"field": "Age"},
+            "color": {"field": "Age"},
+            "tooltip":[
+                {"field":"Age", "type": "ordinal", "title":"Age Group"},
+                {"field":"Percent Arrested", "type": "quantitative", "title":"Percent Re-arrested"},
+                {"field":"Cumulative Percent Arrested", "type": "quantitative", "title":"Cumulative Percent Re-arrested"}
+                ],
+            "opacity": {"value":0.9}
+        }
+    }, {
+        "mark": {
+          "type":"bar",
+          "stroke":"black",
+          "orient":"vertical"
+          },
+        "encoding": {
+            "x": {
+                "field": "Year",
+                "axis": {"labelAngle": 0},
+                "stack": null
+            },
+            "y": {
+                "field": "Percent Arrested",
+                "type": "quantitative",
+                "title": "Percent Re-arrested",
+                "stack": null
+            },
+            "xOffset": {"field": "Age"},
+            "color": {"field": "Age"},
+            "tooltip":[
+                {"field":"Age", "type": "ordinal", "title":"Age Group"},
+                {"field":"Percent Arrested", "type": "quantitative", "title":"Percent Re-arrested"},
+                {"field":"Cumulative Percent Arrested", "type": "quantitative", "title":"Cumulative Percent Re-arrested"}
+                ],
+            "strokeWidth": {"value": 0.7}
+
+        }
+    }
+    
+]
+}

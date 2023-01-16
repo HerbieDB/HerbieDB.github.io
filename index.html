@@ -30,16 +30,16 @@
                 <div class="dropdown">
                     <button class="main_menu">Portfolio</button>
                     <div class="dropdown-content">
-                        <a href="week1.html">Week 1</a>
-                        <a href="week2.html">Week 2</a>
-                        <a href="week3.html">Week 3</a>
-                        <a href="week4.html">Week 4</a>
-                        <a href="week5.html">Week 5</a>
-                        <a href="">Reading Week</a>
-                        <a href="week7.html">Week 7</a>
-                        <a href="week8.html">Week 8</a>
-                        <a href="week9.html">Week 9</a>
-                        <a href="week10.html">Week 10</a>
+                        <a href="week1.html">Week 1 - Chart Embedding</a>
+                        <a href="week2.html">Week 2 - Chart Improvement</a>
+                        <a href="week3.html">Week 3 - Inline Specification</a>
+                        <a href="week4.html">Week 4 - Web Scraping</a>
+                        <a href="week5.html">Week 5 - API Looping</a>
+                        <a href="">Reading Week - No Task</a>
+                        <a href="week7.html">Week 7 - Maps</a>
+                        <a href="week8.html">Week 8 - Festival of Economics</a>
+                        <a href="week9.html">Week 9 - Advanced Charts</a>
+                        <a href="week10.html">Week 10/11 - Machine Learning</a>
                     </div>
                 </div>
                 <a href="https://rapidcharts.io/datascience" target="_blank">RapidCharts</a>
@@ -49,13 +49,11 @@
 
     <div class="main_div">
 
-        <h2>Project: US Prison Data</h2>
+        <h2>Project: US Criminal Recidivism</h2>
 
-        <p></p>
-        <p style="width:650px; margin:auto;">Originally I wanted to compare global prison data, but due to differences in reporting and availability of data (particularly around recidivisim), I had to confine my comparisons to the US. While there still are differences in reporting (more info at the end of this page), I was able to make comparisons much easier than on a global scale.</p>
-
-
-
+        <p>The Federal Bureau of Prisons (BoP) state on <a href="https://www.bop.gov/about/agency/agency_pillars.jsp" target="_blank">their website</a> that "It is the mission of the Federal Bureau of Prisons to protect society by confining offenders in the controlled environments of prisons and community-based facilities that are safe, humane, cost-efficient, and appropriately secure, and that provide work and other self-improvement opportunities to assist offenders in becoming law-abiding citizens". This final part relates to Recidivism, defined as "the tendency of a convicted criminal to reoffend" and is measured by "criminal acts that resulted in rearrest, reconviction or return to prison with or without a new sentence during a three-year period following the person's release", according to the <a href="https://nij.ojp.gov/topics/corrections/recidivism" target="_blank">National Institute of Justice</a>. </p>
+        <p><strong>Aims:</strong> To determine whether State-wide factors influence criminal recidivism.</p>
+        
 
 
         <h3>Chart 1:</h3>
@@ -65,6 +63,7 @@
             <p>My first chart shows most of the data I will be using in my analysis clearly on a map, where each field can be selected to view.</p>
             <div class="map" id="Chart25"></div>
             
+            
         </div>
 
 
@@ -73,12 +72,77 @@
         
         <div class="chart_block">
             <p>My second chart plots each state's recidivism rate against the spending per prisoner, with the bubbles indicating the prisoners per 100,000.</p>
-            <div class="map" id="Chart26"></div>
+            <div class="chart" id="Chart26"></div>
+            <p>Surprisingly, there actually appears to be a positive relationship between the recidivism rate and the corrections expenditure per prisoner. Since this relationship is not necessarily causal, it is possible that some other factors are at play. For example, States with high recidivism rates may be spending more on corrections in an effort to reduce rates, and the effect of this increase in spending has not been seen yet.</p>
             
         </div>
 
+        <h3>Chart 3:</h3>
+
+        <div class="chart_block">
+            <p>For my third chart, I wanted to regress some of my variables against the recidivism rate, to determine if they had any correlation.</p>
+            <div class="chart" id="Chart28"></div>
+            <p></p>
+            
+        </div>
+
+        <h3>Chart 4:</h3>
+
+        
+        <div class="chart_block">
+            <p>For my fourth chart I wanted to see if these variables could accurately predict the Recidivism Rate using the sklearn library. The Google Colab Notebook can be accessed <a href="https://colab.research.google.com/drive/1bENlQQaxCkCzHPsGDH2k8aFF6jpXvye4?usp=sharing" target ="_blank">here</a>.</p>
+            <img src="https://github.com/HerbieDB/HerbieDB.github.io/blob/main/model_accuracy.png?raw=true" style="width:600px; height:400px">
+            <p>The model did not have much success in predicting the Recidivism Rate from the data, with a calculated mean squared error of 285, suggesting these State-wide factors do not influence criminal recidivism.</p>
+        </div>
+
+        
+
+
+        <h3>Chart 5:</h3>
+
+        <div class="chart_block">
+            <p>For my final chart, I wanted to look at recidivism over longer periods of time, to determine whether the standard 3-year reported recidivism gives a good insight into overall recidivism. The Bureau of Justice followed a group of over 400,000 released prisoners from 2005-2014 from 30 States (unfortunately State-by-State data were not published), and published the recidivism each year after release over the 9 years.</p>
+            <iframe src="chart3.html" style="width:90%; height:350px; margin:auto; overflow:hidden; border-radius: 10px;"></iframe>
+            <p>Clearly, the standard 3-year reported recidivism rate does not accurately describe the whole picture. After 3 years the cumulative recidivism rate across all age groups was 68.4%, but at the 9 year mark it reaches 83.3%. This suggests that the true scale of recidivism is hugely underestimated by State governments and current rehabilitation strategies are mostly ineffective.</p>
+            
+        </div>
+
+
+        <h3>Conclusions:</h3>
+
+        <div class="chart_block">
+            <p>It seems like State Recidivism cannot be accurately predicted by State-wide factors such as those tested, using the rates reported in the source used. 
+                However, as seen in my final chart, it seems that States are largely underestimating the recidivism rates, and more accurate figures could potentially allow significant statistical analysis. 
+                Therefore, State-level data should be collected over longer time periods where possible to accurately assess current rates and analyse causes.
+                  More information about individual circumstances of prisoners who reoffend will also likely prove key in addressing recidivism.</p>
+        </div>
+
+
+        <h3>Data Gathering:</h3>
+        <p style="text-align: left; margin-left:10%">The dataset for most of my charts was created from a range of sources listed below, before being <a href="https://colab.research.google.com/drive/16r4fHsCISOitFKuY-H5sQBMC2hCx1ljq?usp=sharing" target="_blank">merged together</a>. The data for State-by-State criminal recidivism was published in 2018, so for each data source I have found data from 2018 or as close as possible. This also avoids any effects from Covid-19 interfering in the analysis.</p>
+        <p style="text-align: left; margin-left:10%"><strong>Sources:</strong></p>
+        <p style="text-align: left; margin-left:10%">Recidivism Rate: Vadoc (Virginia Deparment of Corrections) State recidivism comparison report 2018 available <a href="https://vadoc.virginia.gov/media/1363/vadoc-state-recidivism-comparison-report-2018-12.pdf" target="_blank">here</a>.</p>
+        <p style="text-align: left; margin-left:10%">State Tax Revenue: <a href="https://colab.research.google.com/drive/1Xr6J5cswU25ivIA0cmmrYpWgkG8NmwNC?usp=sharing" target="_blank">Scraped</a> from <a href="https://www.taxadmin.org/2018-state-tax-revenue" target="_blank">here</a>.</p>
+        <p style="text-align: left; margin-left:10%">Unemployment Rate: Scraped (same Colab notebook as above) from <a href="https://www.bls.gov/lau/lastrk18.htm" target="_blank">here</a>.</p>
+        <p style="text-align: left; margin-left:10%">Educational data: <a href="https://colab.research.google.com/drive/17Et8-RSrE_LfFQmq1Yp5lUUbb0GoX0i0?usp=sharing" target="_blank">Scraped</a> from <a href="https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_educational_attainment" target="_blank">Wikipedia</a>.</p>
+        <p style="text-align: left; margin-left:10%">Average Income: Scraped (same Colab notebook as above) from <a href="https://en.wikipedia.org/wiki/List_of_U.S._states_and_territories_by_income" target="_blank">Wikipedia</a>.</p>
+        <p style="text-align: left; margin-left:10%">Corrections Expenditure: BJS Justice Expenditures and Employment in the United States, 2017, available <a href="https://bjs.ojp.gov/library/publications/justice-expenditures-and-employment-united-states-2017" target="_blank">here</a>.</p>
+        <p style="text-align: left; margin-left:10%">Prison Population: BJS Prisoners in 2018, available <a href="https://bjs.ojp.gov/library/publications/prisoners-2018" target="_blank">here</a>.</p>
+        <p style="text-align: left; margin-left:10%">Gini Coefficients: <a href="https://ssti.org/blog/useful-stats-income-inequality-growing-nationally-and-all-states-2006-2018" target="_blank">SSTI</a>.</p>
+        <p style="text-align: left; margin-left:10%">Prison Operational Capacity: State Prison Overcrowding and Capacity Data (University of Nebraska Omaha), available <a href="https://www.unomaha.edu/college-of-public-affairs-and-community-service/governing/stories/state-prison-overcrowding-and-capacity-data.php" target="_blank">here</a>.</p>
+        <p style="text-align: left; margin-left:10%">State Population: US Census Bureau, available <a href="https://www.census.gov/newsroom/press-kits/2018/pop-estimates-national-state.html" target="_blank">here</a>.</p>
+
+        <p style="text-align: left; margin-left:10%">The data for my final chart can be found <a href="https://www.bjs.gov/index.cfm?ty=pbdetail&iid=6266" target="_blank">here</a>. I imported the data into a <a href="https://colab.research.google.com/drive/1ujLJnLbX5LAeeyQV52JUgoKuJFIbLL58?usp=sharing" target="_blank">Colab notebook</a> from the downloaded csv file in order to convert to long format. </p>
+
+        <h3>Challenges in Data Cleaning and/or Analysis:</h3>
+        <p style="text-align: left; margin-left:10%">For State Tax Revenue data I had to research how to scrape a website which actively prevented web-scraping attempts.</p>
+        <p style="text-align: left; margin-left:10%">For the Recidivism Rate in the Vadoc report, certain states were excluded due to differences in reporting standards ("The above states were excluded in the comparison for the following reasons: California's rate excludes parole violations; Georgia only
+            reports re-conviction information; Hawaii only reports re-arrest information; Oregon's rate is based on a six-month release cohort and
+            includes releases from prison and felons released from jails; Tennessee's rate combines re-arrest, re-conviction, and re-incarceration;
+            Texas' rate includes both felons and misdemeanants; Utah's rate only includes releases to parole"), but I wanted to include data for these States in my analysis, so I found data for each from their respective State Corrections departments. </p>
+        <p style="text-align: left; margin-left:10%">I had to create a separate html page for my final chart and embed it into this page because I used the "xOffset" encoding to group the bars by year, which only works with Vega-Lite libraries 5.2.0 or later, but when I tried to change the library version for the entire page my other charts broke.</p>
     </div> 
-    <p>Data organisation can be found <a href="https://colab.research.google.com/drive/16r4fHsCISOitFKuY-H5sQBMC2hCx1ljq?usp=sharing" target="_blank">here.</a></p>
+    
     
 </body>
 
@@ -87,9 +151,11 @@
     //Define charts:
     var myChart25 = "project_data_map.json";
     var myChart26 = "recidivism_vs_spending.json";
+    var myChart28 = "regressions.json";
     // Embed charts:
     vegaEmbed('#Chart25', myChart25);
     vegaEmbed('#Chart26', myChart26);
+    vegaEmbed('#Chart28', myChart28);
 </script>
 
 </html>

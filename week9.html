@@ -1,186 +1,76 @@
 
-/* Import a font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+<!DOCTYPE html>
+<html lang="en">
 
 
-body{
-    background-color: rgb(22,32,58);
- 
-}
-
-.header {
-    background-color: rgb(22,32,58);
-    width: 100%;
-    opacity: 1;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.topnav {
-    overflow: hidden;
-    background-color: #AC9362;
-    border-radius: 15px;
-    display: flex;
-}
-
-.topnav a {
-    float: left;
-    color: rgb(0,0,0);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 16px;
-    outline: none;
-    border: none;
-    width: 25%;
-    height: 100%;
-}
-
-.dropdown {
-    float: left;
-    overflow: hidden;
-    width: 25%;
-    text-align: center;
-}
-
-.dropdown .main_menu {
-    background-color: #AC9362;
-    color: rgb(0,0,0);
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-}
-
-.main_menu {
-    animation: loadColor 150ms ease-in-out;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 20%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    align-items: left;
-    animation: growDown 300ms ease-in-out forwards;
-    transform-origin: top center;
-    border-radius: 5px;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    width: 60%;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-    display:block;
-}
-
-.dropdown:hover .dropdown-content {
-    display:block;
-}
-
-@keyframes growDown {
-    0% {
-        transform: scaleY(0);
-    }
-    80% {
-        transform: scaleY(1.1);
-    }
-    100% {
-        transform: scaleY(1);
-    }
-}
-
-.topnav a:hover, .dropdown:hover .main_menu {
-    border-radius: 15px;
-    color: white;
-    background-color: rgb(22,32,58);
-}
-
-h1, h2 {
-    color:#000281;
-    font-family: sans-serif;
-    text-align: center;
-}
-
-h3 {
-    color: #565656;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
-
-p {
-    color: #565656;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
-
-
-.myWeek1{
-    margin: auto;
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    justify-content: center;
-    align-items: center;
+    <title>Week 9</title>
 
-    width: 100%;
-    background-color: #fafdf3;
-      
-    border: 3px solid #303F67;
-    border-radius: 15px;
+    <link rel="stylesheet" href="styles.css">
 
-    padding-bottom: 250px;
-}
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
 
-
-
-.header h1 {
-    color: white;
-}
-
-
-.myWeek2{
-    margin: auto;
-    max-width: 600px;
-    background-color: #303F67;
-
-      
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 15px;
-    border-color: rgb(32,42,68);
-}
-
-
-
-/* Set the appearance of the class, chart */
-.chart{
-    background-color: rgb(32,42,68);
-    color:#00a767;
+<body>
+    <div class="header">
+        <h1>Data Science for Economists.</h1>
+            <div class="topnav">
+                <a href="index.html">Project</a>
+                <div class="dropdown">
+                    <button class="main_menu">Portfolio</button>
+                    <div class="dropdown-content">
+                        <a href="week1.html">Week 1 - Chart Embedding</a>
+                        <a href="week2.html">Week 2 - Chart Improvement</a>
+                        <a href="week3.html">Week 3 - Inline Specification</a>
+                        <a href="week4.html">Week 4 - Web Scraping</a>
+                        <a href="week5.html">Week 5 - API Looping</a>
+                        <a href="">Reading Week - No Task</a>
+                        <a href="week7.html">Week 7 - Maps</a>
+                        <a href="week8.html">Week 8 - Festival of Economics</a>
+                        <a href="week9.html">Week 9 - Advanced Charts</a>
+                        <a href="week10.html">Week 10/11 - Machine Learning</a>
+                    </div>
+                </div>
+                <a href="https://rapidcharts.io/datascience" target="_blank">RapidCharts</a>
+                <a href="https://github.com/HerbieDB/HerbieDB.github.io" target="_blank">github</a>
+            </div>
+    </div>
     
-    
-    width:350px;
-    border: 1px solid red;
-    border-radius: 10px;
-    padding: 5px
-    
-}
-    
+    <div class="main_div">
+        
+        <h2>Week 9 - Advanced Charts</h2>
+        <p>Our eighth task was to create two charts using advanced analytics.</p>
+        <div class="chartContainer">
+            <div class="chart_block">
+                <div class="chart" id="Chart26"></div>
+                <p>This chart compares US criminal recidivism against State Corrections expenditure per State prisoner, with the size of points determined by the State prison population per 100,000 residents.</p>
+            </div>
+        
+            <div class="chart_block">
+                <div class="chart" id="Chart28"></div>
+                <p>This layered chart regresses a variety of variables on US criminal recidivism.</p>
+            </div>
+        </div>
+    </div>  
+</body>
 
-/* Set the apperance for a particular chart */
-#Chart1{
-    border-color: blue;   
-}
+
+<script>
+    //Define charts:    
+    var myChart26 = "recidivism_vs_spending.json";
+    var myChart28 = "regressions.json";
+
+    // Embed charts:
+    vegaEmbed('#Chart26', myChart26);
+    vegaEmbed('#Chart28', myChart28);
+</script>
+
+</html>
+
+

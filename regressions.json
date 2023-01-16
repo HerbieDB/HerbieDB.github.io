@@ -1,0 +1,95 @@
+{ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "title": {
+      "text": "State Recidivism Rate vs Selected Measured Variable",
+      "subtitle":["Selected Measured Variable (x), Recidivism Rate (y).","Prison Population per 100k (size of point)", ""],
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+
+  "config": {
+    "background":"white",
+    "view": {
+      "stroke": "transparent"}},
+  
+    "data": {
+      "url": "https://raw.githubusercontent.com/HerbieDB/HerbieDB.github.io/main/Project_Data_Final.csv",
+      "format":{"type":"csv"}},
+
+    "height": "container",
+    "width": "container",
+  
+    "transform": [
+      {"calculate": "datum['Prison Population']/datum.Population*100000","as": "Prison Population per 100,000"},
+    {"calculate": "datum['Total direct expenditures on corrections (USD 000s)']*1000/datum.Population","as": "Cost to State taxpayers per capita (USD)"},
+    {"calculate": "datum['Total direct expenditures on corrections (USD 000s)']*1000/datum['Prison Population']","as": "Corrections Spending per Prisoner (USD)"},
+    {"calculate": "datum['Prison Population']","as": "Total Prison Population"},
+    {"calculate": "datum['Total direct expenditures on corrections (USD 000s)']","as": "Total Corrections Expenditure (USD 000s)"},
+    {"calculate": "datum['Bachelors Degree or higher (Percent)']","as": "Education rate: Bachelors or higher (Percent)"},
+    {"calculate": "datum['High School Diploma or higher (Percent)']","as": "Education rate: High School or higher (Percent)"},
+    
+    {"calculate": "datum[Selector]","as": "Field Selected"}
+    ],
+
+
+    "params": [
+    {
+      "name":"Selector",
+      "value": "Prison Population per 100,000",
+      "bind": {
+        "input": "select",
+        "options": ["Prison Population per 100,000", "Cost to State taxpayers per capita (USD)", "Corrections Spending per Prisoner (USD)",  "Total Corrections Expenditure (USD 000s)", "Average Wage (USD)", "Education rate: High School or higher (Percent)", "Education rate: Bachelors or higher (Percent)", "Unemployment Rate (Percent)", "Operational Capacity (Percent)", "Gini Coefficient"]}
+
+        }],
+    "layer": [{
+      "mark": {
+        "type":"circle",
+        "color":"blue",
+        "opacity":0.7},
+    
+      "encoding": {
+        "x": {
+          "field": "Field Selected", 
+          "type": "quantitative",
+          "axis":{"grid": false},
+          "title":null},
+  
+        "y": {
+          "field": "Recidivism Rate (Percent)", 
+          "type": "quantitative",
+          "axis":{"grid": false},
+          "title":null}
+          
+          ,
+  
+
+        "tooltip":[
+          {"field":"State", "type": "ordinal", "title":"State"},
+          {"field":"Recidivism Rate (Percent)", "type": "quantitative", "title":"Recidivism Rate", "format":".0f"},
+          {"field":"Field Selected", "type": "quantitative", "format":",.2f"}
+
+      ]
+      }
+     },{
+        "mark": {"type": "line", "color": "orange"},
+        "transform": [
+          {"regression": "Field Selected", "on": "Recidivism Rate (Percent)", "extent": [21, 65]}
+      ],
+        "encoding": {
+          "x": {
+            "field": "Field Selected",
+            "type": "quantitative",
+            "axis": {"grid": false}},
+
+          "y": {
+            "field": "Recidivism Rate (Percent)",
+            "type": "quantitative",
+            "title": "Recidivism Rate",
+            "axis": {"grid": false}
+        }
+      }
+    }
+    ]
+  }
